@@ -27,10 +27,19 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  throw new Error('Not implemented');
+function getFizzBuzz(num) {
+  let str = '';
+  if (num % 3 === 0 && num % 5 === 0) {
+    str = 'FizzBuzz';
+  } else if (num % 3 === 0) {
+    str = 'Fizz';
+  } else if (num % 5 === 0) {
+    str = 'Buzz';
+  } else {
+    str = num;
+  }
+  return str;
 }
-
 
 /**
  * Returns the factorial of the specified integer n.
@@ -43,8 +52,8 @@ function getFizzBuzz(/* num */) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  return (n !== 1) ? n * getFactorial(n - 1) : 1;
 }
 
 
@@ -60,10 +69,11 @@ function getFactorial(/* n */) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
-function getSumBetweenNumbers(/* n1, n2 */) {
-  throw new Error('Not implemented');
+function getSumBetweenNumbers(n1, n2) {
+  const arr = Array.from({ length: (n2 - n1) / 1 + 1 }, (value, index) => n1 + index * 1);
+  const sum = arr.reduce(((total, amount) => total + amount));
+  return sum;
 }
-
 
 /**
  * Returns true, if a triangle can be built with the specified sides a, b, c

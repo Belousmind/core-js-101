@@ -126,10 +126,9 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  return value % 10;
 }
-
 
 /**
  * Returns a number by given string representation.
@@ -144,7 +143,6 @@ function getLastDigit(/* value */) {
  */
 function parseNumberFromString(value) {
   return +value;
-  // throw new Error('Not implemented');
 }
 
 /**
@@ -162,7 +160,6 @@ function parseNumberFromString(value) {
  */
 function getParallelepipedDiagonal(a, b, c) {
   return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
-  // throw new Error('Not implemented');
 }
 
 
@@ -207,7 +204,6 @@ function roundToPowerOfTen(/* num, pow */) {
 function isPrime(/* n */) {
   throw new Error('Not implemented');
 }
-// isPrime(12)
 
 /**
  * Tries to convert value to number and returns it if conversion was successful;
