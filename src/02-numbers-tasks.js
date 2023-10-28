@@ -207,6 +207,7 @@ function roundToPowerOfTen(/* num, pow */) {
 function isPrime(/* n */) {
   throw new Error('Not implemented');
 }
+// isPrime(12)
 
 /**
  * Tries to convert value to number and returns it if conversion was successful;

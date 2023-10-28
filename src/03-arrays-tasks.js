@@ -20,9 +20,10 @@
  *    ['Array', 'Number', 'string'], 'Date'    => -1
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
-function findElement(/* arr, value */) {
-  throw new Error('Not implemented');
+function findElement(arr, value) {
+  return arr.indexOf(value);
 }
+
 
 /**
  * Generates an array of odd numbers of the specified length
@@ -35,10 +36,15 @@ function findElement(/* arr, value */) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  const arr = [];
+  let i = 1;
+  while (arr.length !== len) {
+    arr.push(i);
+    i += 2;
+  }
+  return arr;
 }
-
 
 /**
  * Returns the doubled array - elements of the specified array
@@ -89,9 +95,10 @@ function getArrayOfPositives(/* arr */) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
-function getArrayOfStrings(/* arr */) {
-  throw new Error('Not implemented');
+function getArrayOfStrings(arr) {
+  return arr.filter((i) => typeof i === 'string');
 }
+
 
 /**
  * Removes falsy values from the specified array
@@ -108,6 +115,7 @@ function getArrayOfStrings(/* arr */) {
  */
 function removeFalsyValues(/* arr */) {
   throw new Error('Not implemented');
+  // return arr.filter((i) => !i === 'false');
 }
 
 /**
@@ -121,10 +129,9 @@ function removeFalsyValues(/* arr */) {
  *    => [ 'PERMANENT-INTERNSHIP', 'GLUTINOUS-SHRIEK', 'MULTIPLICATIVE-ELEVATION' ],
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
-function getUpperCaseStrings(/* arr */) {
-  throw new Error('Not implemented');
+function getUpperCaseStrings(arr) {
+  return (arr.map((i) => i.toUpperCase()));
 }
-
 
 /**
  * Returns the array of string lengths from the specified string array.
@@ -136,8 +143,8 @@ function getUpperCaseStrings(/* arr */) {
  *    [ '', 'a', 'bc', 'def', 'ghij' ]  => [ 0, 1, 2, 3, 4 ]
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
-function getStringsLength(/* arr */) {
-  throw new Error('Not implemented');
+function getStringsLength(arr) {
+  return arr.map((i) => i.length);
 }
 
 /**
@@ -152,9 +159,10 @@ function getStringsLength(/* arr */) {
  *    [ 1, 'b', 'c'], 'x', 0  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(/* arr, item, index */) {
-  throw new Error('Not implemented');
+  // let removed = arr.splice(index, 0, 'some')
+  // console.log(arr.splice(index, 0, 'some'));
 }
-
+// insertItem( [ 1, 3, 4, 5 ], 2, 1)
 /**
  * Returns the n first items of the specified array
  *
