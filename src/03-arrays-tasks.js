@@ -373,8 +373,8 @@ function getFalsyValuesCount(arr) {
  *    [ null, undefined, null ], null => 2
  *    [ true, 0, 1, 'true' ], true => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
+function findAllOccurrences(arr, item) {
+  return arr.filter((i) => i === item).length;
 }
 
 /**
@@ -388,8 +388,8 @@ function findAllOccurrences(/* arr, item */) {
  *    [1, 2, 3, 4, 5]                   => '1,2,3,4,5'
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
-function toStringList(/* arr */) {
-  throw new Error('Not implemented');
+function toStringList(arr) {
+  return arr.join(',');
 }
 
 
@@ -458,8 +458,8 @@ function getIdentityMatrix(/* n */) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  return Array.from({ length: (end - start) / 1 + 1 }, (value, index) => start + index * 1);
 }
 
 /**
@@ -511,6 +511,16 @@ function group(/* array, keySelector, valueSelector */) {
   throw new Error('Not implemented');
 }
 
+// console.log(group([
+//   { country: 'Belarus', city: 'Brest' },
+//   { country: 'Russia', city: 'Omsk' },
+//   { country: 'Russia', city: 'Samara' },
+//   { country: 'Belarus', city: 'Grodno' },
+//   { country: 'Belarus', city: 'Minsk' },
+//   { country: 'Poland', city: 'Lodz' }
+//   ],
+//   item => item.country,
+//   item => item.city))
 
 /**
  * Projects each element of the specified array to a sequence

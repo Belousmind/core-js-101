@@ -53,7 +53,6 @@ function getCircleCircumference(radius) {
  */
 function getAverage(/* value1, value2 */) {
   throw new Error('Not implemented');
-  // return (value1 + value2) > 0 ? (value1 + value2) / 2 : 0;
 }
 
 /**
@@ -71,8 +70,8 @@ function getAverage(/* value1, value2 */) {
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getDistanceBetweenPoints(x1, y1, x2, y2) {
+  return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 }
 
 /**
@@ -201,8 +200,13 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  let i = 2;
+  while (i < n) {
+    if (n % i === 0) return false;
+    i += 1;
+  }
+  return true;
 }
 
 /**
