@@ -36,8 +36,9 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  const arr = Array.from({ length: len }, (value, index) => 1 + index * 2);
+  return arr;
 }
 
 /**
@@ -68,14 +69,8 @@ function doubleArray(arr) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => []
  */
-function getArrayOfPositives(/* arr */) {
-  throw new Error('Not implemented');
-  // const newArr = arr.filter((i) => {
-  //   if (i > 0) {
-  //     return i;
-  //   }
-  // });
-  // return newArr;
+function getArrayOfPositives(arr) {
+  return arr.filter((i) => i > 0);
 }
 
 /**
@@ -107,9 +102,10 @@ function getArrayOfStrings(arr) {
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
-  // return arr.filter((i) => !i === 'false');
+function removeFalsyValues(arr) {
+  const falsyArr = [false, null, 0, '', undefined, NaN];
+  const result = arr.filter((i) => !falsyArr.includes(i));
+  return result;
 }
 
 /**
@@ -152,12 +148,11 @@ function getStringsLength(arr) {
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
  *    [ 1, 'b', 'c'], 'x', 0  => [ 'x', 1, 'b', 'c' ]
  */
-function insertItem(/* arr, item, index */) {
-  throw new Error('Not implemented');
-  // let removed = arr.splice(index, 0, 'some')
-  // console.log(arr.splice(index, 0, 'some'));
+function insertItem(arr, item, index) {
+  arr.splice(index, 0, item);
+  return arr;
 }
-// insertItem( [ 1, 3, 4, 5 ], 2, 1)
+
 /**
  * Returns the n first items of the specified array
  *
@@ -207,8 +202,8 @@ function getTail(arr, n) {
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-function toCsvText(/* arr */) {
-  throw new Error('Not implemented');
+function toCsvText(arr) {
+  return (arr.map((i) => `${i.join(',')}`).join('\n'));
 }
 
 /**
@@ -241,8 +236,8 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  throw new Error('Not implemented');
+function getMovingSum(arr) {
+  return arr.reduce((newArr, n, i) => [...newArr, newArr.length > 0 ? n + newArr[i - 1] : n], []);
 }
 
 /**
@@ -257,15 +252,8 @@ function getMovingSum(/* arr */) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
-  const newArr = [];
-  arr.forEach((item, index) => {
-    if (index % 2 !== 0) {
-      newArr.push(item);
-    }
-  });
-  return newArr;
+  return arr.filter((element, index) => index % 2 !== 0);
 }
-
 
 /**
  * Propagates every item in sequence its position times
@@ -318,13 +306,7 @@ function get3TopItems(arr) {
  *   [ 1, '2' ] => 1
  */
 function getPositivesCount(arr) {
-  const result = [];
-  arr.forEach((i) => {
-    if (typeof i === 'number' && i > 0) {
-      result.push(i);
-    }
-  });
-  return result.length;
+  return arr.filter((i) => typeof i === 'number' && i > 0).length;
 }
 
 /**
@@ -372,8 +354,9 @@ function getItemsSum(arr) {
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
-function getFalsyValuesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getFalsyValuesCount(arr) {
+  const falsyArr = [false, null, 0, '', undefined, NaN];
+  return arr.filter((i) => falsyArr.includes(i)).length;
 }
 
 /**
